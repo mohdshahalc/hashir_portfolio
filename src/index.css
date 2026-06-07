@@ -337,7 +337,7 @@ nav a.active {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 10px;
+  padding: 0; /* Perfectly align with NAME column */
 }
 
 .column-title {
@@ -386,7 +386,7 @@ nav a.active {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 10px;
+  padding: 0; /* Perfectly align with left and right boundaries */
 }
 
 .profession-name {
@@ -1294,6 +1294,10 @@ nav a.active {
   
   .bento-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .bento-cell {
+    padding: 24px !important; /* Uniform, space-efficient padding for all cells on mobile */
   }
   
   .bio-cell {
