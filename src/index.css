@@ -222,6 +222,65 @@ nav a.active {
   box-shadow: 0 2px 8px rgba(36, 160, 237, 0.2);
 }
 
+/* Sidebar Social Icons replacement for Connect Button */
+.sidebar-socials {
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+  gap: 15px;
+}
+
+.sidebar-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 50px;
+  border-radius: 100px;
+  transition: var(--transition-smooth);
+}
+
+.sidebar-social-link.instagram {
+  color: #e1306c;
+  background: rgba(225, 48, 108, 0.1);
+  border: 1px solid rgba(225, 48, 108, 0.3);
+}
+.sidebar-social-link.instagram:hover {
+  background: rgba(225, 48, 108, 0.2);
+  border-color: rgba(225, 48, 108, 0.6);
+  box-shadow: 0 5px 15px rgba(225, 48, 108, 0.25);
+  transform: translateY(-3px);
+}
+
+.sidebar-social-link.whatsapp {
+  color: #25d366;
+  background: rgba(37, 211, 102, 0.1);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+}
+.sidebar-social-link.whatsapp:hover {
+  background: rgba(37, 211, 102, 0.2);
+  border-color: rgba(37, 211, 102, 0.6);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.25);
+  transform: translateY(-3px);
+}
+
+.sidebar-social-link.linkedin {
+  color: #0a66c2;
+  background: rgba(10, 102, 194, 0.1);
+  border: 1px solid rgba(10, 102, 194, 0.3);
+}
+.sidebar-social-link.linkedin:hover {
+  background: rgba(10, 102, 194, 0.2);
+  border-color: rgba(10, 102, 194, 0.6);
+  box-shadow: 0 5px 15px rgba(10, 102, 194, 0.25);
+  transform: translateY(-3px);
+}
+
+.sidebar-social-link svg {
+  width: 22px;
+  height: 22px;
+}
+
 /* Right Content Area */
 .right-content {
   display: flex;
@@ -652,27 +711,62 @@ nav a.active {
 
 @media (max-width: 968px) {
   .main-container {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 30px;
     padding: 30px 24px;
   }
 
+  .right-content {
+    order: 1;
+    width: 100%;
+  }
+
   .cta-column {
+    order: 2;
+    width: 100%;
     flex-direction: row;
-    justify-content: flex-start;
-    gap: 20px;
-    padding-top: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 10px;
   }
 
   .btn-blue {
     flex: 1;
-    max-width: 200px;
+    min-width: 140px;
+    max-width: 220px;
+  }
+
+  .sidebar-socials {
+    flex: 0 0 100%;
+    width: 100%;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 5px;
   }
 }
 
 @media (max-width: 768px) {
   .header-inner {
-    padding: 8px 24px;
+    padding: 10px 16px;
+  }
+
+  nav {
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  .logo-container {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo-text {
+    font-size: 18px;
   }
 
   .images-row {
@@ -684,20 +778,60 @@ nav a.active {
     height: 320px;
   }
 
+  .profile-img {
+    object-position: center 20%;
+    transform: scale(1.15);
+  }
+
   .details-row {
     grid-template-columns: 1fr;
     gap: 30px;
   }
 
-  /* .left-details removed */
-
   .name-value {
-    font-size: 50px;
+    font-size: 45px;
   }
 
   .info-row {
     font-size: 14px;
     height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    padding: 10px 12px;
+  }
+  
+  nav {
+    gap: 10px;
+  }
+  
+  nav a {
+    font-size: 12px;
+  }
+
+  .logo-container {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo-text {
+    font-size: 14px;
+  }
+
+  .cta-column {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .btn-blue {
+    font-size: 13px;
+    padding: 12px 0;
+  }
+
+  .profile-container {
+    height: 280px;
   }
 }
 
@@ -1165,6 +1299,13 @@ nav a.active {
   .bio-cell {
     grid-column: span 1;
   }
+
+  .bio-paragraph {
+    text-align: justify;
+    font-size: 17px;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
   
   .software-cell {
     padding: 30px;
@@ -1418,6 +1559,12 @@ nav a.active {
   }
   .about-card-name {
     font-size: 30px;
+  }
+  .about-card-para:first-child {
+    text-align: justify;
+    font-size: 15px;
+    hyphens: auto;
+    -webkit-hyphens: auto;
   }
 }
 
@@ -2143,6 +2290,15 @@ nav a.active {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+@media (max-width: 768px) {
+  .iframe-container {
+    padding-bottom: 175%; /* Increased vertical space to fit tall Drive folders on mobile */
+  }
+  .iframe-container.native-video {
+    padding-bottom: 56.25%; /* Standard 16:9 for native video files to remove black bars */
+  }
 }
 
 @keyframes modalFadeIn {

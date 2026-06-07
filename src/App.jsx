@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import ContactModal from './components/ContactModal';
 import workstationImg from './assets/video_editing_workstation.png';
 import profileImg from './assets/profile_hashir.png';
+import davinciLogo from './assets/davinci_resolve_logo.png';
+import showreelVideo from './assets/Showreel for web.mp4';
 import { profileData, servicesData, projectsData } from './data/portfolioData';
 
 const getServiceIcon = (name) => {
@@ -205,9 +207,31 @@ function App() {
             <button className="btn-blue" onClick={() => openModal('Get In Touch')}>
               Get In Touch
             </button>
-            <button className="btn-blue" onClick={() => openModal('Connect')}>
-              Connect
-            </button>
+            <a href="/resume.pdf" download="C_Hashir_Resume.pdf" className="btn-blue" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+             RESUME
+            </a>
+            
+            <div className="sidebar-socials">
+              <a href="https://www.instagram.com/c_.hashir?igsh=OWk1bXBvZmpvZHhh" target="_blank" rel="noopener noreferrer" className="sidebar-social-link instagram">
+                <svg viewBox="0 0 24 24" className="social-svg" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </a>
+              <a href="https://wa.me/917356978584" target="_blank" rel="noopener noreferrer" className="sidebar-social-link whatsapp">
+                <svg viewBox="0 0 24 24" className="social-svg" fill="currentColor">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.5-5.739-1.451L0 24zm6.59-4.846c1.6.95 2.727 1.48 4.721 1.485 5.502.003 9.971-4.469 9.974-9.978.002-2.67-1.038-5.18-2.93-7.078-1.89-1.898-4.4-2.943-7.073-2.943-5.51 0-9.98 4.47-9.983 9.983-.001 2.03.543 3.197 1.436 4.767l-.986 3.6 3.69-.97-.08.056z"/>
+                </svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="sidebar-social-link linkedin">
+                <svg viewBox="0 0 24 24" className="social-svg" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+            </div>
           </aside>
 
           {/* Right Area: Images and Info details */}
@@ -275,11 +299,32 @@ function App() {
 
             {/* Cell 2: SHOW REEL */}
             <div className="bento-cell showreel-cell">
-              <div className="video-inner">
-                <svg viewBox="0 0 24 24" className="play-icon" fill="currentColor">
+              <div 
+                className="video-inner" 
+                onClick={() => handleProjectClick(showreelVideo)}
+                style={{ position: 'relative', overflow: 'hidden' }}
+              >
+                <video 
+                  src={showreelVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    opacity: 0.45,
+                    pointerEvents: 'none'
+                  }}
+                />
+                <svg viewBox="0 0 24 24" className="play-icon" fill="currentColor" style={{ position: 'relative', zIndex: 2 }}>
                   <path d="M8 5v14l11-7z"/>
                 </svg>
-                <span>WATCH REEL</span>
+                <span style={{ position: 'relative', zIndex: 2 }}>WATCH REEL</span>
               </div>
             </div>
 
@@ -289,7 +334,6 @@ function App() {
               <div className="explore-buttons">
                 <button className="btn-explore" onClick={() => setActiveTab('portfolio')}>PORTFOLIO</button>
                 <button className="btn-explore" onClick={() => setActiveTab('about')}>ABOUT</button>
-                <a href="/resume.pdf" download="C_Hashir_Resume.pdf" className="btn-explore" style={{ textDecoration: 'none', display: 'block' }}>DOWNLOAD RESUME</a>
               </div>
             </div>
 
@@ -302,19 +346,8 @@ function App() {
                 <div className="icon-wrapper ae-logo" title="Adobe After Effects">
                   <span>Ae</span>
                 </div>
-                <div className="icon-wrapper resolve-logo" title="DaVinci Resolve">
-                  <svg viewBox="0 0 100 100" className="svg-icon">
-                    <circle cx="50" cy="50" r="46" fill="#0f0f11" stroke="rgba(255, 255, 255, 0.05)" strokeWidth="1" />
-                    <g transform="translate(50, 50) scale(0.9)">
-                      {/* Red Petal */}
-                      <path d="M0,-8 C12,-8 28,-18 32,-6 C36,6 26,22 12,22 C2,22 2,12 0,6 Z" fill="#ff4646" />
-                      {/* Blue Petal */}
-                      <path d="M0,-8 C12,-8 28,-18 32,-6 C36,6 26,22 12,22 C2,22 2,12 0,6 Z" fill="#0072ff" transform="rotate(120)" />
-                      {/* Green Petal */}
-                      <path d="M0,-8 C12,-8 28,-18 32,-6 C36,6 26,22 12,22 C2,22 2,12 0,6 Z" fill="#00e676" transform="rotate(240)" />
-                      <circle cx="0" cy="0" r="6" fill="#0f0f11" />
-                    </g>
-                  </svg>
+                <div className="icon-wrapper resolve-logo" title="DaVinci Resolve" style={{ overflow: 'hidden', border: 'none', background: 'transparent' }}>
+                  <img src={davinciLogo} alt="DaVinci Resolve" style={{ width: '100%', height: '100%', objectFit: 'contain', transform: 'scale(1.25)' }} />
                 </div>
                 <div className="icon-wrapper higgsfield-logo" title="Higgsfield AI">
                   <svg viewBox="0 0 80 80" className="svg-icon">
@@ -503,14 +536,23 @@ function App() {
         <div className="video-modal-overlay" onClick={() => setActiveVideoUrl(null)}>
           <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="video-modal-close" onClick={() => setActiveVideoUrl(null)}>×</button>
-            <div className="iframe-container">
-              <iframe 
-                src={activeVideoUrl} 
-                title="Project Video" 
-                frameBorder="0" 
-                allow="autoplay; fullscreen; encrypted-media" 
-                allowFullScreen
-              />
+            <div className={`iframe-container ${activeVideoUrl.endsWith('.mp4') ? 'native-video' : ''}`}>
+              {activeVideoUrl.endsWith('.mp4') ? (
+                <video 
+                  src={activeVideoUrl} 
+                  controls 
+                  autoPlay 
+                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'contain' }} 
+                />
+              ) : (
+                <iframe 
+                  src={activeVideoUrl} 
+                  title="Project Video" 
+                  frameBorder="0" 
+                  allow="autoplay; fullscreen; encrypted-media" 
+                  allowFullScreen
+                />
+              )}
             </div>
           </div>
         </div>

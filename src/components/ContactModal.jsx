@@ -82,7 +82,7 @@ const ContactModal = ({ isOpen, onClose, type, onSuccess }) => {
             </p>
             <div className="connect-social-grid">
               <a 
-                href="https://instagram.com/kami_cinemas" 
+                href="https://www.instagram.com/c_.hashir?igsh=OWk1bXBvZmpvZHhh" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="connect-social-card instagram"
@@ -96,7 +96,7 @@ const ContactModal = ({ isOpen, onClose, type, onSuccess }) => {
                 </div>
                 <div className="social-card-info">
                   <span className="social-platform">Instagram</span>
-                  <span className="social-handle">@kami_cinemas</span>
+                  <span className="social-handle">@c_.hashir</span>
                 </div>
               </a>
 
