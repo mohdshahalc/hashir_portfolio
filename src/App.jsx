@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ContactModal from './components/ContactModal';
 import workstationImg from './assets/video_editing_workstation.png';
 import profileImg from './assets/profile_hashir.png';
@@ -146,6 +146,10 @@ function App() {
   const [toastMessage, setToastMessage] = useState('');
   const [toastShow, setToastShow] = useState(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeTab]);
+
   const openModal = (type) => {
     setModalType(type);
     setModalOpen(true);
@@ -207,9 +211,9 @@ function App() {
             <button className="btn-blue" onClick={() => openModal('Get In Touch')}>
               Get In Touch
             </button>
-            <a href="/resume.pdf" download="C_Hashir_Resume.pdf" className="btn-blue" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+            <button onClick={() => setActiveVideoUrl('/resume.pdf')} className="btn-blue" style={{ border: 'none', outline: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
              RESUME
-            </a>
+            </button>
             
             <div className="sidebar-socials">
               <a href="https://www.instagram.com/c_.hashir?igsh=OWk1bXBvZmpvZHhh" target="_blank" rel="noopener noreferrer" className="sidebar-social-link instagram">
@@ -301,7 +305,6 @@ function App() {
             <div className="bento-cell showreel-cell">
               <div 
                 className="video-inner" 
-                onClick={() => handleProjectClick(showreelVideo)}
                 style={{ position: 'relative', overflow: 'hidden' }}
               >
                 <video 
@@ -310,21 +313,18 @@ function App() {
                   loop
                   muted
                   playsInline
+                  controls
+                  controlsList="nofullscreen nodownload noplaybackrate"
+                  disablePictureInPicture
                   style={{
                     position: 'absolute',
                     top: 0,
                     left: 0,
                     width: '100%',
                     height: '100%',
-                    objectFit: 'cover',
-                    opacity: 0.45,
-                    pointerEvents: 'none'
+                    objectFit: 'cover'
                   }}
                 />
-                <svg viewBox="0 0 24 24" className="play-icon" fill="currentColor" style={{ position: 'relative', zIndex: 2 }}>
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-                <span style={{ position: 'relative', zIndex: 2 }}>WATCH REEL</span>
               </div>
             </div>
 
@@ -407,9 +407,9 @@ function App() {
                         <span className="stat-lbl">AI Filmmaking</span>
                       </div>
                     </div>
-                    <a href="/resume.pdf" download="C_Hashir_Resume.pdf" className="btn-explore" style={{ textDecoration: 'none', display: 'block', marginTop: '15px' }}>
-                      DOWNLOAD RESUME
-                    </a>
+                    <button onClick={() => setActiveVideoUrl('/resume.pdf')} className="btn-explore" style={{ border: 'none', outline: 'none', display: 'block', marginTop: '15px', textAlign: 'center', width: '100%' }}>
+                      VIEW RESUME
+                    </button>
                   </div>
                 </div>
                 

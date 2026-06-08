@@ -2091,6 +2091,7 @@ nav a.active {
 
 /* Category-specific Hover States and Glowing Accents */
 
+@media (hover: hover) {
 /* MUSIC: Blue Accent */
 .folder-card.music:hover {
   transform: translateY(-5px);
@@ -2205,6 +2206,7 @@ nav a.active {
   color: var(--accent-purple);
   transform: translateX(4px);
 }
+}
 
 /* Responsive Overrides */
 @media (max-width: 1200px) {
@@ -2248,12 +2250,13 @@ nav a.active {
 .video-modal-content {
   position: relative;
   background: #09090b;
-  border: 1px solid rgba(192, 132, 252, 0.15);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  border-radius: 20px;
-  width: 90%;
-  max-width: 960px;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  border-radius: 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
   animation: modalSlideUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
@@ -2283,8 +2286,8 @@ nav a.active {
 .iframe-container {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  height: 0;
+  height: 100%;
+  flex: 1;
 }
 
 .iframe-container iframe {
@@ -2298,10 +2301,10 @@ nav a.active {
 
 @media (max-width: 768px) {
   .iframe-container {
-    padding-bottom: 175%; /* Increased vertical space to fit tall Drive folders on mobile */
+    height: 100%;
   }
   .iframe-container.native-video {
-    padding-bottom: 56.25%; /* Standard 16:9 for native video files to remove black bars */
+    height: 100%;
   }
 }
 
