@@ -118,7 +118,7 @@ const ContactModal = ({ isOpen, onClose, type, onSuccess }) => {
               </a>
 
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/hashir-c" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="connect-social-card linkedin"

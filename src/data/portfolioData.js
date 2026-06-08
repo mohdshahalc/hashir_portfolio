@@ -16,16 +16,23 @@ export const profileData = {
 
 export const servicesData = [
   { name: "AI Films" },
-  { name: "Social Ads" },
   { name: "Branded Content" },
   { name: "Promo Videos" },
   { name: "Retainer Projects" },
-  { name: "TVC" },
   { name: "Short Films" },
+  { name: "Social Ads" },
+  { name: "TVC" },
   { name: "UGC" }
 ];
 
 export const projectsData = [
+  {
+    title: "AI",
+    description: "AI-driven filmmaking and visual design",
+    category: "AI Films",
+    videoUrl: "https://next.frame.io/share/5c6b4835-9988-47ab-867c-d80386fa2b6d/d9670b1f-1618-4f4a-9293-a406d8269b74",
+    technologies: ["Midjourney", "Runway Gen-2"]
+  },
   {
     title: "MUSIC",
     description: "Cinematic Music Videos",
@@ -34,11 +41,11 @@ export const projectsData = [
     technologies: ["Premiere Pro", "After Effects"]
   },
   {
-    title: "WEDDING FILMS",
-    description: "Premium Wedding Cinema",
-    category: "Wedding Films",
-    videoUrl: "https://next.frame.io/share/c5cb436b-3a20-41c0-b977-b8fc1dfdb2e8/2f678074-339f-4342-85d5-baa49e3d75b0",
-    technologies: ["DaVinci Resolve", "Sony FX6"]
+    title: "SHORT FILMS",
+    description: "Creative short films and narrative storytelling",
+    category: "Short Films",
+    videoUrl: "https://next.frame.io/share/3636198d-6c2b-4aaf-9a31-c97a46137e45/41dfe3f3-d3f5-43db-b933-63e8aae040b4",
+    technologies: ["Premiere Pro", "DaVinci Resolve"]
   },
   {
     title: "SOCIAL MEDIA",
@@ -48,17 +55,10 @@ export const projectsData = [
     technologies: ["Premiere Pro", "CapCut"]
   },
   {
-    title: "AI",
-    description: "AI-driven filmmaking and visual design",
-    category: "AI Films",
-    videoUrl: "https://next.frame.io/share/5c6b4835-9988-47ab-867c-d80386fa2b6d/d9670b1f-1618-4f4a-9293-a406d8269b74",
-    technologies: ["Midjourney", "Runway Gen-2"]
-  },
-  {
-    title: "SHORT FILMS",
-    description: "Creative short films and narrative storytelling",
-    category: "Short Films",
-    videoUrl: "https://next.frame.io/share/3636198d-6c2b-4aaf-9a31-c97a46137e45/41dfe3f3-d3f5-43db-b933-63e8aae040b4",
-    technologies: ["Premiere Pro", "DaVinci Resolve"]
+    title: "WEDDING FILMS",
+    description: "Premium Wedding Cinema",
+    category: "Wedding Films",
+    videoUrl: "https://next.frame.io/share/c5cb436b-3a20-41c0-b977-b8fc1dfdb2e8/2f678074-339f-4342-85d5-baa49e3d75b0",
+    technologies: ["DaVinci Resolve", "Sony FX6"]
   }
 ];

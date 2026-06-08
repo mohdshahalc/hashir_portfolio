@@ -228,7 +228,7 @@ function App() {
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.5-5.739-1.451L0 24zm6.59-4.846c1.6.95 2.727 1.48 4.721 1.485 5.502.003 9.971-4.469 9.974-9.978.002-2.67-1.038-5.18-2.93-7.078-1.89-1.898-4.4-2.943-7.073-2.943-5.51 0-9.98 4.47-9.983 9.983-.001 2.03.543 3.197 1.436 4.767l-.986 3.6 3.69-.97-.08.056z"/>
                 </svg>
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="sidebar-social-link linkedin">
+              <a href="https://www.linkedin.com/in/hashir-c" target="_blank" rel="noopener noreferrer" className="sidebar-social-link linkedin">
                 <svg viewBox="0 0 24 24" className="social-svg" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
                   <rect x="2" y="9" width="4" height="12"/>
